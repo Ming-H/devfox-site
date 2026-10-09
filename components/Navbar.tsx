@@ -1,98 +1,35 @@
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { ThemeToggle } from './ThemeToggle';
-
-const navItems = [
-  { href: '/', label: '首页' },
-  { href: '/#products', label: '产品' },
-  { href: '/about', label: '关于' },
-  { href: '/contact', label: '联系' },
-];
+import Link from "next/link";
+import { site } from "@/lib/products";
 
 export function Navbar() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
-  const isActive = (href: string) => href === '/' ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
-
   return (
-    <header className="border-b border-[rgba(0,0,0,0.1)] bg-white">
-      <div className="mx-auto flex h-14 max-w-[1200px] items-center justify-between px-6">
-        {/* Logo */}
-        <Link href="/" className="text-[15px] font-semibold tracking-normal text-[rgba(0,0,0,0.95)] no-underline">
-          DevFox AI
+    <header className="border-b" style={{ borderColor: "var(--line)" }}>
+      <div className="wrap flex h-[72px] items-center justify-between">
+        <Link
+          href="/"
+          className="no-underline"
+          style={{ fontFamily: "var(--font-serif)", fontWeight: 900, fontSize: 20 }}
+        >
+          DEVFOX<span style={{ color: "var(--accent)" }}>.</span>
         </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-[15px] font-medium no-underline transition-colors hover:text-[#0075de] ${
-                isActive(item.href) ? 'text-[rgba(0,0,0,0.95)]' : 'text-[#615d59]'
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="ml-2">
-            <ThemeToggle />
-          </div>
-          <Link href="/contact" className="btn-primary ml-2">
-            联系合作
+        <nav className="flex items-center gap-6 md:gap-9">
+          <Link href="/#products" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
+            产品
           </Link>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="text-[rgba(0,0,0,0.95)]"
-            aria-label="Toggle menu"
+          <Link href="/about" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
+            关于
+          </Link>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm no-underline"
+            style={{ color: "var(--ink-sub)" }}
           >
-            {mobileOpen ? (
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />
-              </svg>
-            )}
-          </button>
-        </div>
+            GitHub ↗
+          </a>
+        </nav>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="border-t border-[rgba(0,0,0,0.1)] px-6 pb-6 pt-4 md:hidden">
-          <nav className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-[15px] font-medium no-underline ${
-                  isActive(item.href) ? 'text-[rgba(0,0,0,0.95)]' : 'text-[#615d59]'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/contact" className="btn-primary mt-2 text-center">
-              联系合作
-            </Link>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

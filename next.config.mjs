@@ -43,10 +43,30 @@ const nextConfig = {
         destination: 'https://ming-h.github.io/ai-insights/gallery/',
         permanent: true,
       },
-      // Projects → Cases (internal redirect)
+      // 旧页面收敛到首页（服务定位已改为个人产品站）
       {
         source: '/projects',
-        destination: '/cases',
+        destination: '/#products',
+        permanent: true,
+      },
+      {
+        source: '/products',
+        destination: '/#products',
+        permanent: true,
+      },
+      {
+        source: '/services',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cases',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/about',
         permanent: true,
       },
     ];

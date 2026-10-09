@@ -1,54 +1,56 @@
-import Link from 'next/link';
-
-const footerLinks = {
-  navigate: [
-    { label: '首页', href: '/' },
-    { label: '产品', href: '/#products' },
-    { label: '关于', href: '/about' },
-    { label: '联系', href: '/contact' },
-  ],
-  channels: [
-    { label: 'GitHub', href: 'https://github.com/Ming-H' },
-    { label: 'AI Insights', href: 'https://ming-h.github.io/ai-insights/' },
-  ],
-};
+import { site } from "@/lib/products";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[rgba(0,0,0,0.1)] bg-white px-6 py-8">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-col gap-4">
-          <p className="text-[15px] font-semibold text-[rgba(0,0,0,0.95)]">
-            DevFox AI
-          </p>
-          <div className="flex gap-4">
-            {footerLinks.navigate.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-[15px] font-medium no-underline hover:underline"
-                style={{ color: '#615d59' }}
-              >
-                {link.label}
-              </Link>
-            ))}
-            {footerLinks.channels.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[15px] font-medium no-underline hover:underline"
-                style={{ color: '#615d59' }}
-              >
-                {link.label}
-              </a>
-            ))}
+    <footer style={{ background: "var(--footer-bg)", color: "var(--footer-ink)" }}>
+      <div className="wrap pb-11 pt-24">
+        <p
+          className="fade-up"
+          style={{
+            fontFamily: "var(--font-en-serif)",
+            fontStyle: "italic",
+            fontWeight: 500,
+            fontSize: "clamp(34px, 3.8vw, 52px)",
+            lineHeight: 1.2,
+            color: "#f5f2ec",
+          }}
+        >
+          {site.footerQuote[0]}
+          <span className="block" style={{ marginLeft: 56, color: "var(--footer-accent)" }}>
+            {site.footerQuote[1]}
+          </span>
+        </p>
+        <div
+          className="mt-[92px] flex flex-wrap items-center justify-between gap-4 pt-7"
+          style={{ borderTop: "1px solid var(--footer-line)" }}
+        >
+          <div className="flex gap-7">
+            <a
+              href={site.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+              style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--footer-sub)" }}
+            >
+              GITHUB ↗
+            </a>
+            <a
+              href={site.insights}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+              style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--footer-sub)" }}
+            >
+              AI INSIGHTS ↗
+            </a>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--footer-sub)" }}>
+              微信 {site.wechat.toUpperCase()}
+            </span>
+          </div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--footer-faint)" }}>
+            © 2026 DEVFOX · DEVFOXAI.CN
           </div>
         </div>
-        <p className="text-[14px] text-[#a39e98]">
-          &copy; {new Date().getFullYear()} DevFox AI
-        </p>
       </div>
     </footer>
   );

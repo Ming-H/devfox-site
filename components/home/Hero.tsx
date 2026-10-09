@@ -1,86 +1,54 @@
-'use client';
-
-import Link from 'next/link';
+import { site } from "@/lib/products";
 
 export function Hero() {
   return (
-    <section className="bg-white px-6 pb-20 pt-24 sm:pt-32">
-      <div className="mx-auto max-w-[1200px] text-center">
-        {/* Badge */}
-        <span
-          className="inline-block rounded-full px-3 py-1 text-[12px] font-semibold"
-          style={{
-            background: '#f2f9ff',
-            color: '#097fe8',
-            letterSpacing: '0.125px',
-          }}
-        >
-          AI Agent delivery
-        </span>
-
-        {/* Headline */}
-        <h1
-          className="mx-auto mt-6 max-w-[800px] font-bold leading-[1.00]"
-          style={{
-            fontSize: 'clamp(32px, 5vw, 64px)',
-            letterSpacing: '-2.125px',
-            color: 'rgba(0, 0, 0, 0.95)',
-            fontFeatureSettings: '"lnum" 1, "locl" 1',
-          }}
-        >
-          帮助企业落地 AI Agent 与可运行的 AI 应用
-        </h1>
-
-        {/* Subtitle */}
-        <p
-          className="mx-auto mt-6 max-w-[560px]"
-          style={{
-            fontSize: '20px',
-            lineHeight: 1.40,
-            letterSpacing: '-0.125px',
-            fontWeight: 600,
-            color: '#615d59',
-          }}
-        >
-          从需求分析、Agent 架构设计到开发部署上线，完成 AI Agent 和智能应用的完整交付
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <Link href="/cases" className="btn-primary">
-            查看代表项目
-          </Link>
-          <Link href="/contact" className="btn-secondary">
-            发起合作沟通
-          </Link>
-        </div>
-
-        {/* Agent Screenshot */}
+    <section className="border-b" style={{ borderColor: "var(--line)" }}>
+      <div className="wrap relative grid grid-cols-1 pb-[104px] pt-[120px] lg:grid-cols-[1fr_300px]">
+        {/* 主区与注释栏之间的垂直发丝线 */}
         <div
-          className="mx-auto mt-16 w-full max-w-[780px] overflow-hidden"
-          style={{
-            border: '1px solid rgba(0, 0, 0, 0.1)',
-            borderRadius: '12px',
-            boxShadow: 'rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2px 7.85px, rgba(0,0,0,0.02) 0px 0.8px 2.93px',
-          }}
-        >
-          <div
-            className="flex items-center justify-center bg-[#f6f5f4]"
-            style={{ aspectRatio: '16/10' }}
+          aria-hidden
+          className="absolute bottom-0 right-[348px] top-[72px] hidden w-px lg:block"
+          style={{ background: "var(--line)" }}
+        />
+        <div className="pr-0 lg:pr-[72px]">
+          <span className="eyebrow mb-9 block">{site.name} 的独立产品工作室</span>
+          <h1
+            className="fade-up"
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 600,
+              fontSize: "clamp(48px, 6.4vw, 84px)",
+              lineHeight: 1.18,
+            }}
           >
-            <div className="text-center">
-              <div
-                className="font-bold text-[rgba(0,0,0,0.95)]"
-                style={{ fontSize: '22px', letterSpacing: '-0.25px', lineHeight: 1.27 }}
-              >
-                GrowthPilot Agent
-              </div>
-              <div className="mt-2 text-[14px] font-normal text-[#a39e98]">
-                Agent 界面截图将展示于此
-              </div>
-            </div>
-          </div>
+            {site.tagline[0]}
+            <span className="block" style={{ marginLeft: "clamp(24px, 6vw, 96px)", color: "var(--accent)" }}>
+              {site.tagline[1]}
+            </span>
+          </h1>
+          <p className="tw-pretty mt-9 max-w-[560px] text-[16.5px]" style={{ color: "var(--ink-sub)" }}>
+            {site.heroSub}
+          </p>
+          <a
+            href="#products"
+            className="mt-11 inline-block rounded-full px-[26px] py-[13px] text-sm no-underline"
+            style={{ background: "var(--ink)", color: "#fbfaf8" }}
+          >
+            看看正在做什么 ↓
+          </a>
         </div>
+        <aside className="hidden flex-col justify-end pl-11 text-[13.5px] lg:flex" style={{ color: "var(--ink-sub)" }}>
+          <span className="mb-[18px] block h-px w-10" style={{ background: "var(--ink)" }} />
+          <span>{site.asideNote}</span>
+          <em
+            className="mt-[14px] block"
+            style={{ fontFamily: "var(--font-en-serif)", fontStyle: "italic", fontSize: 17, color: "var(--accent)", lineHeight: 1.5 }}
+          >
+            {site.asideQuote[0]}
+            <br />
+            {site.asideQuote[1]}
+          </em>
+        </aside>
       </div>
     </section>
   );

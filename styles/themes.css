@@ -1,285 +1,44 @@
 /**
- * DevFox AI — Notion-Inspired Design System
- * Warm neutrals, whisper borders, multi-layer shadows
+ * DevFox — Editorial Design System
+ * 暖纸底 + 墨色衬线 + 唯一强调色（极客狐橙）+ 发丝线
+ * 大气感来自：字号极差 ≥5:1、超大段落留白、不对称偏移、严格左边距网格
  */
 
 :root {
-  /* Backgrounds — warm whites */
-  --background-primary: #ffffff;
-  --background-secondary: #f6f5f4;
-  --background-tertiary: #edece9;
-  --background-elevated: #ffffff;
-  --background-code: #f6f5f4;
+  /* backgrounds */
+  --bg: #fafaf7;
+  --bg-2: #f3f2ee;
+  --card: #ffffff;
 
-  /* Text — warm near-black, not pure black */
-  --text-primary: rgba(0, 0, 0, 0.95);
-  --text-secondary: #615d59;
-  --text-tertiary: #a39e98;
-  --text-muted: #a39e98;
-  --text-strong: #000000;
+  /* ink */
+  --ink: #211b19;
+  --ink-sub: #6e6a64;
+  --ink-faint: #98948d;
 
-  /* Accent — Notion Blue, the only saturated color */
-  --color-accent: #0075de;
-  --color-accent-hover: #005bab;
-  --color-accent-soft: #f2f9ff;
-  --color-accent-text: #0075de;
+  /* hairlines */
+  --line: #e6e5df;
 
-  /* Links */
-  --color-link: #0075de;
-  --color-link-hover: #005bab;
+  /* accents — 唯一强调色：极客狐橙 */
+  --accent: #e8590c;
+  --accent-hover: #d14e08;
+  --accent-soft: rgba(232, 89, 12, 0.08);
 
-  /* Borders — whisper-weight */
-  --border-subtle: 1px solid rgba(0, 0, 0, 0.04);
-  --border-default: 1px solid rgba(0, 0, 0, 0.1);
-  --border-medium: 1px solid rgba(0, 0, 0, 0.16);
-  --border-strong: 1px solid rgba(0, 0, 0, 0.24);
+  /* status */
+  --ok: #1f9d61;
 
-  /* Shadows — multi-layer, sub-0.05 opacity */
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2px 7.85px, rgba(0,0,0,0.02) 0px 0.8px 2.93px, rgba(0,0,0,0.01) 0px 0.175px 1.04px;
-  --shadow-xl: rgba(0,0,0,0.01) 0px 1px 3px, rgba(0,0,0,0.02) 0px 3px 7px, rgba(0,0,0,0.02) 0px 7px 15px, rgba(0,0,0,0.04) 0px 14px 28px, rgba(0,0,0,0.05) 0px 23px 52px;
-  --shadow-brand: none;
-  --shadow-brand-lg: none;
-  --shadow-glow: none;
+  /* footer */
+  --footer-bg: #161311;
+  --footer-ink: #edeae4;
+  --footer-sub: #b9b4ab;
+  --footer-faint: #8a857c;
+  --footer-line: rgba(245, 242, 236, 0.14);
+  --footer-accent: #ff9b66;
 
-  /* Radius — Notion scale */
-  --radius-sm: 4px;
-  --radius-md: 5px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-  --radius-full: 9999px;
-
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-normal: 300ms ease;
-
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, system-ui, 'Segoe UI', Helvetica, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', monospace;
-}
-
-/* Dark theme — Notion doesn't really have dark, but keep it for compatibility */
-.dark {
-  --background-primary: #191919;
-  --background-secondary: #202020;
-  --background-tertiary: #2d2d2d;
-  --background-elevated: #2d2d2d;
-  --background-code: #262626;
-
-  --text-primary: rgba(255, 255, 255, 0.95);
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --text-tertiary: rgba(255, 255, 255, 0.4);
-  --text-muted: rgba(255, 255, 255, 0.4);
-  --text-strong: #ffffff;
-
-  --color-accent: #0075de;
-  --color-accent-hover: #62aef0;
-  --color-accent-soft: rgba(0, 117, 222, 0.15);
-  --color-accent-text: #62aef0;
-
-  --color-link: #62aef0;
-  --color-link-hover: #90c5f5;
-
-  --border-subtle: 1px solid rgba(255, 255, 255, 0.04);
-  --border-default: 1px solid rgba(255, 255, 255, 0.08);
-  --border-medium: 1px solid rgba(255, 255, 255, 0.12);
-  --border-strong: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ==================== Buttons ==================== */
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #0075de;
-  color: #ffffff;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  font-weight: 600;
-  font-family: var(--font-sans);
-  padding: 8px 16px;
-  font-size: 15px;
-  line-height: 1.33;
-  cursor: pointer;
-  transition: background var(--transition-fast);
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: #005bab;
-}
-
-.btn-primary:active {
-  transform: scale(0.9);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  font-weight: 600;
-  font-family: var(--font-sans);
-  padding: 8px 16px;
-  font-size: 15px;
-  line-height: 1.33;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  text-decoration: none;
-}
-
-.btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.08);
-}
-
-/* ==================== Card ==================== */
-
-.card {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  box-shadow: rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2px 7.85px, rgba(0,0,0,0.02) 0px 0.8px 2.93px;
-  transition: box-shadow var(--transition-normal);
-}
-
-.card:hover {
-  box-shadow: rgba(0,0,0,0.01) 0px 1px 3px, rgba(0,0,0,0.02) 0px 3px 7px, rgba(0,0,0,0.02) 0px 7px 15px, rgba(0,0,0,0.04) 0px 14px 28px, rgba(0,0,0,0.05) 0px 23px 52px;
-}
-
-/* ==================== Tags ==================== */
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  border: none;
-  border-radius: 9999px;
-  color: #097fe8;
-  background: #f2f9ff;
-  letter-spacing: 0.125px;
-  white-space: nowrap;
-}
-
-/* ==================== Divider ==================== */
-
-.divider {
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: none;
-  width: 100%;
-}
-
-/* ==================== Prose (Article Content) ==================== */
-
-.prose {
-  color: rgba(0, 0, 0, 0.95);
-  font-size: 16px;
-  line-height: 1.50;
-  font-weight: 400;
-}
-
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  color: rgba(0, 0, 0, 0.95);
-  font-weight: 700;
-}
-
-.prose h1 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem; letter-spacing: -1.5px; }
-.prose h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.625px; }
-.prose h3 { font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem; letter-spacing: -0.25px; }
-
-.prose p { margin-bottom: 1.25rem; }
-
-.prose a {
-  color: #0075de;
-  text-decoration: none;
-}
-
-.prose a:hover {
-  text-decoration: underline;
-}
-
-.prose strong { font-weight: 700; }
-
-.prose code {
-  background: #f6f5f4;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 0.1rem 0.35rem;
-  font-size: 0.85em;
-  font-family: var(--font-mono);
-  color: #0075de;
-}
-
-.prose pre {
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  overflow-x: auto;
-  background: #f6f5f4;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.prose pre code {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: inherit;
-  border-radius: 0;
-}
-
-.prose ul, .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
-.prose ul { list-style-type: disc; }
-.prose ol { list-style-type: decimal; }
-.prose li { margin-bottom: 0.375rem; color: #615d59; }
-.prose li::marker { color: #a39e98; }
-
-.prose blockquote {
-  margin: 1.5rem 0;
-  padding: 0.75rem 1rem;
-  border-left: 3px solid #0075de;
-  background: #f6f5f4;
-  color: #615d59;
-  border-radius: 0 4px 4px 0;
-}
-
-.prose blockquote p:last-child { margin-bottom: 0; }
-
-.prose table { width: 100%; margin-bottom: 1.5rem; border-collapse: collapse; }
-.prose thead { background: #f6f5f4; }
-.prose th { padding: 0.625rem 1rem; text-align: left; font-size: 14px; font-weight: 600; color: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(0,0,0,0.1); }
-.prose td { padding: 0.625rem 1rem; font-size: 16px; color: #615d59; border-bottom: 1px solid rgba(0,0,0,0.04); }
-.prose tr:last-child td { border-bottom: none; }
-
-.prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 2rem 0; }
-.prose hr { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 2.5rem 0; }
-
-/* ==================== Headings ==================== */
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.95);
-}
-
-/* ==================== Selection ==================== */
-
-::selection {
-  background-color: #f2f9ff;
-  color: rgba(0, 0, 0, 0.95);
-}
-
-.dark ::selection {
-  background-color: rgba(0, 117, 222, 0.3);
+  /* fonts (self-hosted via @fontsource, declared in app/layout.tsx) */
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code",
+    monospace;
+  --font-en-serif: "Playfair Display", Georgia, serif;
 }

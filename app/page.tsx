@@ -1,26 +1,17 @@
-import { Hero } from '@/components/home/Hero';
-import { ProductShowcase } from '@/components/home/ProductShowcase';
-import { CTA } from '@/components/home/CTA';
+import { Hero } from "@/components/home/Hero";
+import { Ticker } from "@/components/home/Ticker";
+import { ProductGrid } from "@/components/home/ProductGrid";
+import { Method } from "@/components/home/Method";
 
-export const dynamic = 'force-static';
-
-export const metadata = {
-  title: 'DevFox AI — AI Agent 与 AI 应用落地交付',
-  description:
-    '面向企业与个人提供 AI Agent、自动化工作流、知识检索和智能应用的落地交付服务。',
-  openGraph: {
-    title: 'DevFox AI — AI Agent 与 AI 应用落地交付',
-    description:
-      '面向企业与个人提供 AI Agent、自动化工作流、知识检索和智能应用的落地交付服务。',
-  },
-};
+export const dynamic = "force-static";
 
 export default function HomePage() {
   return (
-    <div className="page-shell">
+    <div className="page-shell pb-4">
       <Hero />
-      <ProductShowcase />
-      <CTA />
+      <Ticker />
+      <ProductGrid />
+      <Method />
     </div>
   );
 }
