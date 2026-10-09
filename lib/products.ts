@@ -91,7 +91,7 @@ export const site = {
     msg: "每日更新中：全市场 CAN SLIM 打分 + 宏观研判 · 120+ 期存档",
   },
   updated: "更新于 2026 年 10 月",
-  wechat: "randforest0102",
+  x: "https://x.com/MingFire520",
   github: "https://github.com/Ming-H",
   insights: "https://ming-h.github.io/ai-insights/",
   footerQuote: ["Small tools,", "shipped with tests."],

@@ -148,15 +148,21 @@ export default function AboutPage() {
                 </p>
               </a>
             ))}
-            <div style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 10, padding: "28px 30px" }}>
-              <span className="eyebrow">WeChat</span>
+            <a
+              href={site.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline transition-[border-color] duration-200"
+              style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 10, padding: "28px 30px" }}
+            >
+              <span className="eyebrow">X</span>
               <h3 className="mt-4" style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 21 }}>
-                {site.wechat}
+                x.com/MingFire520
               </h3>
               <p className="mt-2 text-[13.5px]" style={{ color: "var(--ink-sub)" }}>
-                最快的沟通方式，聊产品、聊合作都行
+                日常动态与碎碎念
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>

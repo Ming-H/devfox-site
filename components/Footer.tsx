@@ -43,9 +43,15 @@ export function Footer() {
             >
               AI INSIGHTS ↗
             </a>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--footer-sub)" }}>
-              微信 {site.wechat.toUpperCase()}
-            </span>
+            <a
+              href={site.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+              style={{ fontFamily: "var(--font-mono)", fontSize: "12.5px", color: "var(--footer-sub)" }}
+            >
+              X ↗
+            </a>
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--footer-faint)" }}>
             © 2026 DEVFOX · DEVFOXAI.CN
