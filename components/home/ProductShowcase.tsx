@@ -23,7 +23,7 @@ const products = [
 
 export function ProductShowcase() {
   return (
-    <section className="bg-[#f6f5f4] px-6 py-20">
+    <section id="products" className="bg-[#f6f5f4] px-6 py-20">
       <div className="mx-auto max-w-[1200px]">
         {/* Section Title */}
         <h2

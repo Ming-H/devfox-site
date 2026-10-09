@@ -7,7 +7,7 @@ import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
   { href: '/', label: '首页' },
-  { href: '/products', label: '产品' },
+  { href: '/#products', label: '产品' },
   { href: '/about', label: '关于' },
   { href: '/contact', label: '联系' },
 ];

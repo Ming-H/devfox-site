@@ -3,7 +3,7 @@ import Link from 'next/link';
 const footerLinks = {
   navigate: [
     { label: '首页', href: '/' },
-    { label: '产品', href: '/products' },
+    { label: '产品', href: '/#products' },
     { label: '关于', href: '/about' },
     { label: '联系', href: '/contact' },
   ],
