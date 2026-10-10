@@ -11,7 +11,7 @@ export function Navbar() {
           className="display no-underline"
           style={{ fontSize: 19, color: "var(--ink)" }}
         >
-          devfox<span style={{ color: "var(--accent)" }}>_</span>
+          devfox<span className="blink-caret" style={{ color: "var(--accent)" }}>_</span>
         </Link>
         <nav className="flex items-center gap-5 md:gap-7">
           <Link href="/#products" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
@@ -19,9 +19,6 @@ export function Navbar() {
           </Link>
           <Link href="/writing" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
             文章
-          </Link>
-          <Link href="/resume" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
-            简历
           </Link>
           <Link href="/now" className="hidden text-sm no-underline sm:inline" style={{ color: "var(--ink-sub)" }}>
             Now

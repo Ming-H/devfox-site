@@ -30,6 +30,52 @@ const links = [
   { label: "AI Insights", title: "内容与技术输出", desc: "长期思考、写作和项目背景", href: site.insights },
 ];
 
+/** 履历精编版：完整可打印版在 /resume */
+const experience = [
+  {
+    period: "2024.11 – 至今",
+    org: "某头部新能源车企",
+    role: "大模型应用工程师",
+    highlight: "独立负责 LLM 应用端到端交付：试驾质检效率 10×、社媒线索挖掘 Agent 日均 20w+ 数据、一客一策全量推广",
+  },
+  {
+    period: "2021.07 – 2024.11",
+    org: "某头部出行平台",
+    role: "资深算法工程师 · MPT",
+    highlight: "管理 3–5 人团队；智能补贴：因果推断 + 整数规划，ROI 显著提升；司机拉新 RTA/oCPC",
+  },
+  {
+    period: "2020.04 – 2021.06",
+    org: "某国际化直播平台",
+    role: "广告算法工程师",
+    highlight: "UCB Bandit 冷启动探索成功率 30% → 60%；MMoE 七目标 CVR 模型",
+  },
+  {
+    period: "2019.05 – 2020.03",
+    org: "某金融科技公司",
+    role: "算法工程师",
+    highlight: "理财产品人群圈选与精准触达",
+  },
+  {
+    period: "2018.05 – 2019.04",
+    org: "某电商平台",
+    role: "增长算法工程师",
+    highlight: "金融产品营销算法：圈人、权益、时机联合优化",
+  },
+  {
+    period: "2017.07 – 2018.04",
+    org: "某央企研究所",
+    role: "算法工程师",
+    highlight: "信用评分与意向评分模型",
+  },
+];
+
+const education = {
+  school: "北京工业大学 · 信息学部",
+  degree: "控制科学与工程 硕士（本科自动化）",
+  note: "BigNeuron 国际合作（Allen Institute）：神经元重构方法在 27 种主流方法中综合排名前二；SCI/EI 论文各一篇（第一作者）",
+};
+
 export default function AboutPage() {
   return (
     <div className="pb-2">
@@ -100,6 +146,68 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 履历精编：招聘方看关于页即可，完整可打印版一键直达 */}
+      <section className="pt-[120px]">
+        <div className="wrap">
+          <div className="mb-14 grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr]">
+            <span className="eyebrow pt-[20px]">EXPERIENCE</span>
+            <div>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 3.4vw, 46px)", lineHeight: 1.22 }}>
+                九年，一条增长的主轴。
+              </h2>
+              <p className="tw-pretty mt-4 max-w-[560px] text-[15px]" style={{ color: "var(--ink-sub)" }}>
+                从补贴优化、因果推断、计算广告，到 LLM 应用交付——方法换了工具，没换的是对证据的要求。
+              </p>
+            </div>
+          </div>
+          <div className="max-w-[860px]">
+            {experience.map((e, i) => (
+              <div
+                key={e.period}
+                className="grid grid-cols-1 gap-1.5 py-6 md:grid-cols-[168px_1fr] md:gap-8"
+                style={{ borderTop: i === 0 ? "1px solid var(--line-strong)" : "1px solid var(--line)" }}
+              >
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ink-faint)", paddingTop: 4 }}>
+                  {e.period}
+                </span>
+                <div>
+                  <h3 style={{ fontSize: 16, fontWeight: 600 }}>
+                    {e.org}
+                    <span style={{ color: "var(--ink-faint)", fontWeight: 400 }}> · {e.role}</span>
+                  </h3>
+                  <p className="tw-pretty mt-1 text-[14px]" style={{ color: "var(--ink-sub)" }}>
+                    {e.highlight}
+                  </p>
+                </div>
+              </div>
+            ))}
+            <div className="grid grid-cols-1 gap-1.5 py-6 md:grid-cols-[168px_1fr] md:gap-8" style={{ borderTop: "1px solid var(--line)" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ink-faint)", paddingTop: 4 }}>
+                2014 – 2017
+              </span>
+              <div>
+                <h3 style={{ fontSize: 16, fontWeight: 600 }}>
+                  {education.school}
+                  <span style={{ color: "var(--ink-faint)", fontWeight: 400 }}> · {education.degree}</span>
+                </h3>
+                <p className="tw-pretty mt-1 text-[14px]" style={{ color: "var(--ink-sub)" }}>
+                  {education.note}
+                </p>
+              </div>
+            </div>
+            <div className="py-8" style={{ borderTop: "1px solid var(--line)" }}>
+              <a
+                href="/resume"
+                className="rounded-md border px-5 py-2.5 text-[13px] no-underline"
+                style={{ borderColor: "var(--line)", color: "var(--ink-sub)", fontFamily: "var(--font-mono)" }}
+              >
+                完整简历（可打印 PDF）→
+              </a>
+            </div>
           </div>
         </div>
       </section>
