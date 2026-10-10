@@ -42,15 +42,7 @@ export default function AboutPage() {
           />
           <div className="pr-0 lg:pr-[72px]">
             <span className="eyebrow mb-9 block">ABOUT</span>
-            <h1
-              className="fade-up"
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 600,
-                fontSize: "clamp(40px, 5vw, 68px)",
-                lineHeight: 1.2,
-              }}
-            >
+            <h1 className="display fade-up" style={{ fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1.16 }}>
               把判断做成作品，
               <span className="block" style={{ marginLeft: "clamp(24px, 6vw, 96px)", color: "var(--accent)" }}>
                 把过程留在明处。
@@ -69,12 +61,12 @@ export default function AboutPage() {
           <aside className="hidden flex-col justify-end pl-11 text-[13.5px] lg:flex" style={{ color: "var(--ink-sub)" }}>
             <span className="mb-[18px] block h-px w-10" style={{ background: "var(--ink)" }} />
             <span>九年前优化补贴，如今给判断造秤。</span>
-            <em
+            <span
               className="mt-[14px] block"
-              style={{ fontFamily: "var(--font-en-serif)", fontStyle: "italic", fontSize: 17, color: "var(--accent)", lineHeight: 1.5 }}
+              style={{ fontFamily: "var(--font-mono)", fontSize: 13.5, color: "var(--accent)", lineHeight: 1.7 }}
             >
-              Judgment, shipped.
-            </em>
+              $ judgment --shipped
+            </span>
           </aside>
         </div>
       </section>
@@ -84,11 +76,10 @@ export default function AboutPage() {
           <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr]">
             <span className="eyebrow pt-[22px]">TIMELINE</span>
             <h2
+              className="display"
               style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 600,
-                fontSize: "clamp(32px, 3.6vw, 48px)",
-                lineHeight: 1.24,
+                fontSize: "clamp(30px, 3.4vw, 46px)",
+                lineHeight: 1.22,
                 marginLeft: "11%",
               }}
             >
@@ -101,7 +92,7 @@ export default function AboutPage() {
                 <div className="mb-4" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--accent)" }}>
                   {t.year}
                 </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 21, marginBottom: 10, lineHeight: 1.4 }}>
+                <h3 className="display" style={{ fontSize: 20, marginBottom: 8, lineHeight: 1.35 }}>
                   {t.title}
                 </h3>
                 <p className="max-w-[320px] text-sm" style={{ color: "var(--ink-sub)", lineHeight: 1.8 }}>
@@ -118,11 +109,10 @@ export default function AboutPage() {
           <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr]">
             <span className="eyebrow pt-[22px]">CONNECT</span>
             <h2
+              className="display"
               style={{
-                fontFamily: "var(--font-serif)",
-                fontWeight: 600,
-                fontSize: "clamp(32px, 3.6vw, 48px)",
-                lineHeight: 1.24,
+                fontSize: "clamp(30px, 3.4vw, 46px)",
+                lineHeight: 1.22,
                 marginLeft: "11%",
               }}
             >
@@ -140,7 +130,7 @@ export default function AboutPage() {
                 style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 10, padding: "28px 30px" }}
               >
                 <span className="eyebrow">{l.label}</span>
-                <h3 className="mt-4" style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 21 }}>
+                <h3 className="display mt-4" style={{ fontSize: 20 }}>
                   {l.title}
                 </h3>
                 <p className="mt-2 text-[13.5px]" style={{ color: "var(--ink-sub)" }}>
@@ -156,7 +146,7 @@ export default function AboutPage() {
               style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 10, padding: "28px 30px" }}
             >
               <span className="eyebrow">X</span>
-              <h3 className="mt-4" style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 21 }}>
+              <h3 className="display mt-4" style={{ fontSize: 20 }}>
                 x.com/MingFire520
               </h3>
               <p className="mt-2 text-[13.5px]" style={{ color: "var(--ink-sub)" }}>

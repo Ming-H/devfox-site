@@ -18,33 +18,24 @@ const rules = [
 
 export function Method() {
   return (
-    <section className="pt-[136px]">
+    <section className="pt-[128px]">
       <div className="wrap">
-        <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr]">
-          <span className="eyebrow pt-[22px]">HOW I BUILD</span>
-          <h2
-            className="fade-up"
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontWeight: 600,
-              fontSize: "clamp(36px, 4vw, 56px)",
-              lineHeight: 1.24,
-              marginLeft: "11%",
-            }}
-          >
+        <div className="mb-14 grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr]">
+          <span className="eyebrow pt-[20px]">HOW I BUILD</span>
+          <h2 className="display fade-up" style={{ fontSize: "clamp(32px, 3.8vw, 52px)", lineHeight: 1.22 }}>
             做东西的三条规矩。
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-14">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {rules.map((r) => (
             <div key={r.no}>
               <div className="mb-4" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--accent)" }}>
-                {r.no}
+                rule_{r.no}
               </div>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 22, marginBottom: 10 }}>
+              <h3 className="display" style={{ fontSize: 21, marginBottom: 8 }}>
                 {r.title}
               </h3>
-              <p className="max-w-[300px] text-sm" style={{ color: "var(--ink-sub)", lineHeight: 1.8 }}>
+              <p className="tw-pretty max-w-[300px] text-sm" style={{ color: "var(--ink-sub)", lineHeight: 1.8 }}>
                 {r.desc}
               </p>
             </div>

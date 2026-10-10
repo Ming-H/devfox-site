@@ -14,7 +14,7 @@ export function Ticker() {
             ● live
           </span>
         </span>
-        <span className="whitespace-nowrap" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ink-faint)" }}>
+        <span className="hidden whitespace-nowrap sm:inline" style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--ink-faint)" }}>
           {site.updated}
         </span>
       </div>

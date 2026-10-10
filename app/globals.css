@@ -27,6 +27,7 @@
     line-height: 1.75;
     background: var(--bg);
     color: var(--ink);
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   ::selection {
@@ -44,12 +45,8 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(33, 27, 25, 0.18);
+    background: var(--line-strong);
     border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(33, 27, 25, 0.3);
   }
 }
 
@@ -63,9 +60,11 @@
     font-weight: 500;
   }
 
-  /* 避免中文孤字行 */
-  .tw-pretty {
-    text-wrap: pretty;
+  /* display 标题：Space Grotesk × Noto Sans 紧字距 */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   /* 内容容器：统一的左边距网格 */
@@ -76,10 +75,41 @@
     padding-right: 48px;
   }
 
+  /* 避免中文孤字行 */
+  .tw-pretty {
+    text-wrap: pretty;
+  }
+
   @media (max-width: 640px) {
     .wrap {
       padding-left: 24px;
       padding-right: 24px;
     }
+  }
+}
+
+/* ── 简历打印：只保留简历正文，黑白紧凑 ── */
+@media print {
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-plain,
+  .print-plain * {
+    color: #111 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: #ddd !important;
+  }
+
+  .wrap {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

@@ -1,32 +1,43 @@
 /**
- * DevFox — Editorial Design System
- * 暖纸底 + 墨色衬线 + 唯一强调色（极客狐橙）+ 发丝线
- * 大气感来自：字号极差 ≥5:1、超大段落留白、不对称偏移、严格左边距网格
+ * DevFox — Design System v3 (Geek / dual-mode)
+ * 黑白双模式：默认暗色，html.dark / html.light 切换（防闪烁脚本在 layout）
+ * 气质：等宽眉标 × 无衬线大标题 × 唯一强调色（极客狐橙）× 发丝线 × 大气留白骨架
  */
 
 :root {
-  /* backgrounds */
-  --bg: #fafaf7;
+  /* fonts (self-hosted via @fontsource, declared in app/layout.tsx) */
+  --font-display: "Space Grotesk", "Noto Sans SC", "PingFang SC", sans-serif;
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code",
+    monospace;
+}
+
+/* ── 浅色模式（html.light） ── */
+:root,
+html.light {
+  color-scheme: light;
+
+  --bg: #fafaf8;
   --bg-2: #f3f2ee;
-  --card: #ffffff;
+  --panel: #ffffff;
 
-  /* ink */
-  --ink: #211b19;
-  --ink-sub: #6e6a64;
-  --ink-faint: #98948d;
+  --ink: #1a1815;
+  --ink-sub: #615d57;
+  --ink-faint: #7a766f;
 
-  /* hairlines */
-  --line: #e6e5df;
+  --line: #e7e5df;
+  --line-strong: #d6d4cd;
 
-  /* accents — 唯一强调色：极客狐橙 */
   --accent: #e8590c;
-  --accent-hover: #d14e08;
+  --accent-contrast: #fbfaf8;
   --accent-soft: rgba(232, 89, 12, 0.08);
 
-  /* status */
   --ok: #1f9d61;
 
-  /* footer */
+  --cta-bg: #1a1815;
+  --cta-ink: #fbfaf8;
+
   --footer-bg: #161311;
   --footer-ink: #edeae4;
   --footer-sub: #b9b4ab;
@@ -34,11 +45,39 @@
   --footer-line: rgba(245, 242, 236, 0.14);
   --footer-accent: #ff9b66;
 
-  /* fonts (self-hosted via @fontsource, declared in app/layout.tsx) */
-  --font-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code",
-    monospace;
-  --font-en-serif: "Playfair Display", Georgia, serif;
+  --shadow-card: 0 1px 2px rgba(26, 24, 21, 0.04);
+}
+
+/* ── 暗色模式（html.dark，默认） ── */
+html.dark {
+  color-scheme: dark;
+
+  --bg: #0b0d14;
+  --bg-2: #10131d;
+  --panel: #12151f;
+
+  --ink: #f2f0ef;
+  --ink-sub: #9da0ac;
+  --ink-faint: #6b6e7b;
+
+  --line: rgba(242, 240, 239, 0.09);
+  --line-strong: rgba(242, 240, 239, 0.18);
+
+  --accent: #ff7a33;
+  --accent-contrast: #140b06;
+  --accent-soft: rgba(255, 122, 51, 0.1);
+
+  --ok: #3ecf8e;
+
+  --cta-bg: #f2f0ef;
+  --cta-ink: #0b0d14;
+
+  --footer-bg: #07080d;
+  --footer-ink: #edeae4;
+  --footer-sub: #b9b4ab;
+  --footer-faint: #6b6e7b;
+  --footer-line: rgba(245, 242, 236, 0.12);
+  --footer-accent: #ff9b66;
+
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.35);
 }

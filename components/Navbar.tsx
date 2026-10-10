@@ -1,20 +1,30 @@
 import Link from "next/link";
 import { site } from "@/lib/products";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
   return (
-    <header className="border-b" style={{ borderColor: "var(--line)" }}>
-      <div className="wrap flex h-[72px] items-center justify-between">
+    <header className="no-print border-b" style={{ borderColor: "var(--line)" }}>
+      <div className="wrap flex h-[68px] items-center justify-between">
         <Link
           href="/"
-          className="no-underline"
-          style={{ fontFamily: "var(--font-serif)", fontWeight: 900, fontSize: 20 }}
+          className="display no-underline"
+          style={{ fontSize: 19, color: "var(--ink)" }}
         >
-          DEVFOX<span style={{ color: "var(--accent)" }}>.</span>
+          devfox<span style={{ color: "var(--accent)" }}>_</span>
         </Link>
-        <nav className="flex items-center gap-6 md:gap-9">
+        <nav className="flex items-center gap-5 md:gap-7">
           <Link href="/#products" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
             产品
+          </Link>
+          <Link href="/writing" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
+            文章
+          </Link>
+          <Link href="/resume" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
+            简历
+          </Link>
+          <Link href="/now" className="hidden text-sm no-underline sm:inline" style={{ color: "var(--ink-sub)" }}>
+            Now
           </Link>
           <Link href="/about" className="text-sm no-underline" style={{ color: "var(--ink-sub)" }}>
             关于
@@ -23,11 +33,12 @@ export function Navbar() {
             href={site.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm no-underline"
+            className="hidden text-sm no-underline md:inline"
             style={{ color: "var(--ink-sub)" }}
           >
             GitHub ↗
           </a>
+          <ThemeToggle />
         </nav>
       </div>
     </header>
