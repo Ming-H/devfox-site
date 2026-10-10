@@ -123,7 +123,7 @@ export function ProductGrid() {
             }
             intro="每件东西都从一个真实问题开始。有的成了日常依赖，有的保持开源方法，都在仓库里活着。"
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
               <ProductCard key={p.name} product={p} />
             ))}
